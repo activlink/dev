@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ClientKey": {
+      "type": "string"
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Primary_font": {
+      "type": "string"
+    },
+    "Primary_Colour": {
+      "type": "text"
+    },
+    "Secondary_Colour": {
+      "type": "string"
+    },
+    "Button_Colour": {
+      "type": "string"
+    }
+  }
+}
