@@ -368,6 +368,7 @@ export interface ApiDeviceInputDeviceInput extends Schema.SingleType {
     singularName: 'device-input';
     pluralName: 'device-inputs';
     displayName: 'Device-input';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -379,6 +380,12 @@ export interface ApiDeviceInputDeviceInput extends Schema.SingleType {
   };
   attributes: {
     Make: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Model: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

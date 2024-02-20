@@ -4,7 +4,8 @@
   "info": {
     "singularName": "device-input",
     "pluralName": "device-inputs",
-    "displayName": "Device-input"
+    "displayName": "Device-input",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,14 @@
   },
   "attributes": {
     "Make": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Model": {
       "pluginOptions": {
         "i18n": {
           "localized": true
