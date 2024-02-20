@@ -362,34 +362,49 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDeviceEntryDeviceEntry extends Schema.SingleType {
-  collectionName: 'device_entries';
+export interface ApiDeviceInputDeviceInput extends Schema.SingleType {
+  collectionName: 'device_inputs';
   info: {
-    singularName: 'device-entry';
-    pluralName: 'device-entries';
-    displayName: 'Device-Entry';
+    singularName: 'device-input';
+    pluralName: 'device-inputs';
+    displayName: 'Device-input';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Model: Attribute.String;
-    Make: Attribute.String;
+    Make: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::device-entry.device-entry',
+      'api::device-input.device-input',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::device-entry.device-entry',
+      'api::device-input.device-input',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::device-input.device-input',
+      'oneToMany',
+      'api::device-input.device-input'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -824,7 +839,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::device-entry.device-entry': ApiDeviceEntryDeviceEntry;
+      'api::device-input.device-input': ApiDeviceInputDeviceInput;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

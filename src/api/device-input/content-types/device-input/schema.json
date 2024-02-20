@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "device_inputs",
+  "info": {
+    "singularName": "device-input",
+    "pluralName": "device-inputs",
+    "displayName": "Device-input"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Make": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}
