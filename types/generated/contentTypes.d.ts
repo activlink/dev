@@ -877,100 +877,6 @@ export interface ApiDeviceInputDeviceInput extends Schema.SingleType {
   };
 }
 
-export interface ApiDisplayDeviceDisplayDevice extends Schema.SingleType {
-  collectionName: 'display_devices';
-  info: {
-    singularName: 'display-device';
-    pluralName: 'display-devices';
-    displayName: 'Display_Device';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Make: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Model: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    GTIN: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Retail_Price: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Google_URL: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    DOP: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Continue_text: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    No_Search: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::display-device.display-device',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::display-device.display-device',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::display-device.display-device',
-      'oneToMany',
-      'api::display-device.display-device'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiLocalisationLocalisation extends Schema.CollectionType {
   collectionName: 'localisations';
   info: {
@@ -1055,7 +961,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::client.client': ApiClientClient;
       'api::device-input.device-input': ApiDeviceInputDeviceInput;
-      'api::display-device.display-device': ApiDisplayDeviceDisplayDevice;
       'api::localisation.localisation': ApiLocalisationLocalisation;
     }
   }
